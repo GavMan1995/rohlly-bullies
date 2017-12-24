@@ -1,0 +1,20 @@
+.c-card {
+  @include flex-item(400px, 1);
+  padding: 16px;
+
+  > h3 {
+    width: 100%;
+    padding-bottom: 8px;
+    color: $cl-white;
+  }
+
+  > img {
+    width: 100%;
+    height: auto;
+    margin-top: 16px;
+  }
+}
+
+.c-card-placeholder {
+  @include flex-item(400px, 1);
+}

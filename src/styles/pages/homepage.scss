@@ -1,0 +1,277 @@
+.c-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  @include screen-smaller-than(md) {
+    height: 400px;
+  }
+}
+
+.c-scrolldown {
+  position: absolute;
+  bottom: 16px;
+  left: calc(50% - 48px);
+  color: $cl-neutral-2;
+  z-index: 300;
+  animation: bounce 10s 2s infinite;
+
+  @include screen-smaller-than(md) {
+    display: none;
+  }
+}
+
+.c-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background: url('https://res.cloudinary.com/gavmanweb/image/upload/v1512034800/portfolio/Screen_Shot_2017-11-30_at_2.38.07_AM.png');
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  z-index: 100;
+
+  @include screen-smaller-than(730px) {
+    min-width: 100%;
+    height: 100%;
+  }
+}
+
+.c-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($cl-neutral-6, 0.8);
+  z-index: 100;
+}
+
+.c-overlay--lite {
+  background-color: rgba($cl-white, 0.5);
+}
+
+.c-hero__content-container {
+  @include flex-container(center, center, center, nowrap, column);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  color: $cl-white;
+  text-align: center;
+  z-index: 200;
+
+  > img {
+    width: 60%;
+    height: auto;
+  }
+
+  > h3 {
+    max-width: 800px;
+    padding-top: 32px;
+  }
+
+  @include screen-smaller-than(md) {
+    padding-top: 60px;
+  }
+}
+
+.c-phone-view {
+  position: relative;
+  width: 360px;
+  padding: 64px 16px;
+  border: 6px solid $cl-neutral-6;
+  border-radius: 24px;
+  background-color: $cl-neutral-5;
+  box-shadow: 0 4px 40px 12px $cl-neutral-5;
+
+  @include screen-smaller-than(md) {
+    margin-top: 34px;
+  }
+
+  @include screen-smaller-than(sm) {
+    display: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 240px;
+    right: -10px;
+    width: 4px;
+    height: 60px;
+    border-radius: 0 3px 3px 0;
+    background-color: $cl-neutral-6;
+    content: '';
+  }
+
+  &::after {
+    position: absolute;
+    top: 108px;
+    right: -10px;
+    width: 4px;
+    height: 100px;
+    border-radius: 0 3px 3px 0;
+    background-color: $cl-neutral-6;
+    content: '';
+  }
+
+  > iframe {
+    width: 320px;
+    height: 568px;
+    border: 1px solid $cl-neutral-6;
+  }
+}
+
+.c-phone-speaker {
+  position: absolute;
+  top: 32px;
+  left: 116px;
+  width: 120px;
+  height: 8px;
+  border-radius: 12px;
+  background-color: $cl-neutral-6;
+  content: '';
+}
+
+.c-phone-mic {
+  position: absolute;
+  bottom: 4px;
+  left: 148px;
+  width: 56px;
+  height: 56px;
+  border: 2px solid $cl-neutral-6;
+  border-radius: 50%;
+  background-color: $cl-neutral-4;
+  content: '';
+}
+
+.c-search-form-header {
+  width: 100%;
+  padding-top: 24px;
+
+  @include screen-smaller-than(sm) {
+    display: none;
+  }
+}
+
+.c-search-form {
+  @include flex-container($flex-wrap: nowrap);
+  width: 100%;
+  padding-top: 16px;
+
+  @include screen-smaller-than(sm) {
+    display: none;
+  }
+
+  > input {
+    @include flex-item(400px, 0);
+    padding: 16px 8px 7px;
+    border: 4px solid $cl-green;
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+    outline: 0;
+    font-size: 18px;
+  }
+
+  > button {
+    padding: 16px;
+    transition: background-color 0.3s;
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    outline: 0;
+    background-color: $cl-green;
+    color: $cl-white;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($cl-green, 5%);
+    }
+  }
+}
+
+.c-email-img-container {
+  @include flex-item(100%);
+  @include flex-container(center, center, center);
+
+  > h2 {
+    width: 100%;
+    padding-top: 8px;
+    text-align: center;
+  }
+
+  > img {
+    width: 200px;
+  }
+}
+
+.c-footer {
+  @include flex-container();
+  padding: 16px 5%;
+  background-color: $cl-neutral-6;
+  color: $cl-white;
+  border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient;
+
+  @include screen-smaller-than(md) {
+    padding: 24px;
+  }
+}
+
+.c-contact-form {
+  @include flex-item(600px, 0);
+  @include flex-container(center, center);
+  padding: 16px;
+
+  @include screen-smaller-than(sm) {
+    padding: 0;
+  }
+
+  > input,
+  textarea,
+  button {
+    @include flex-item(100%);
+  }
+
+  > input {
+    padding: 16px;
+    border: 4px solid $cl-green;
+    border-radius: 4px 4px 0 0;
+    outline: 0;
+    font-size: 18px;
+  }
+
+  > textarea {
+    height: 200px;
+    padding: 8px;
+    border-top: 0;
+    border-right: 4px solid $cl-green;
+    border-bottom: 0;
+    border-left: 4px solid $cl-green;
+    outline: 0;
+    font-size: 18px;
+  }
+
+  > button {
+    padding: 16px;
+    transition: background-color 0.3s, border-color 0.3s;
+    border: 4px solid $cl-green;
+    border-radius: 0 0 4px 4px;
+    outline: 0;
+    background-color: $cl-green;
+    color: $cl-white;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: darken($cl-green, 5%);
+      background-color: darken($cl-green, 5%);
+    }
+  }
+}

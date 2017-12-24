@@ -1,0 +1,39 @@
+.c-img-container {
+  @include flex-item(100%);
+
+  > img {
+    width: 100%;
+  }
+}
+
+.c-img-container--hide-on-mobile {
+  @include screen-smaller-than(sm) {
+    display: none;
+  }
+}
+
+.c-img-container--about-me {
+  @include flex-item(200px, 0);
+  margin-bottom: 16px;
+
+  > img {
+    border-radius: 50%;
+  }
+}
+
+.c-img-container--react {
+  @include flex-item(280px, 0);
+
+  @include screen-smaller-than(sm) {
+    flex-basis: 120px;
+  }
+}
+.c-img-container--html-css {
+  @include flex-item(160px, 1);
+  padding: 16px;
+
+  @include screen-smaller-than(sm) {
+    flex-basis: 120px;
+    flex-grow: 0;
+  }
+}
